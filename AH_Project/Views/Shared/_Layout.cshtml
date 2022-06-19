@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>HUMAN EVALUATION</title>
+    <link rel="stylesheet" href="~/lib/select2/css/select2.min.css" asp-append-version="true">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="~/lib/AdminLTE/plugins/css/all.fontawesome.min.css" asp-append-version="true">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/lib/AdminLTE/adminlte.min.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/lib/toastr.js/toastr.min.css" asp-append-version="true">
+    @await RenderSectionAsync("CSS", required: false)
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body class="hold-transition layout-top-nav layout-navbar-fixed">
+    <div class="wrapper">
+
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+            <div class="container " style="display: block;text-align: center;">
+                     <h4 class="navbar-brand text-center">Human Evaluation of " Image Captioning with Novel Topics Guidance and Retrieval-based Topics Re-weighting"</h4>
+                </div>
+        </nav>
+        <!-- /.navbar -->
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Main content -->
+            <div class="content pt-3">
+                <div class="container">
+                    @RenderBody()
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <!-- Main Footer -->
+        <footer class="main-footer text-center">
+            <div class="d-none d-sm-inline">
+                <strong>&copy; 2022 - HUMAN EVALUATION</strong>
+            </div>
+        </footer>
+    </div>
+    <!-- ./wrapper -->
+    <!-- REQUIRED SCRIPTS -->
+    <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
+    <script src="~/lib/AdminLTE/adminlte.min.js" asp-append-version="true"></script>
+    <script src="~/lib/toastr.js/toastr.min.js" asp-append-version="true"></script>
+    <script src="~/lib/select2/js/select2.min.js" asp-append-version="true"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    @if (TempData["success"] != null)
+    {
+        <script type="text/javascript">
+            toastr.success('@TempData["success"]');
+        </script>
+    }
+    @if (TempData["error"] != null)
+    {
+        <script type="text/javascript">
+            toastr.error('@TempData["error"]');
+        </script>
+    }    
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
